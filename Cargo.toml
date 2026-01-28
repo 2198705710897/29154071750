@@ -5,8 +5,8 @@ edition = "2021"
 
 [features]
 default = ["postgres"]
-postgres = ["tokio-postgres"]
-sqlite = ["rusqlite"]
+postgres = ["dep:tokio-postgres"]
+sqlite = ["dep:rusqlite"]
 
 [dependencies]
 # Async Runtime
