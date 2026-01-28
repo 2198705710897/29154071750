@@ -1,0 +1,35 @@
+# Rust build artifacts
+/target
+**/*.rs.bk
+Cargo.lock
+
+# Environment variables (contains secrets)
+.env
+.env.local
+.env.*.local
+
+# Sensitive config files (contains X API tokens/cookies)
+config.toml
+
+# Local database files
+*.db
+*.db-shm
+*.db-wal
+tokens.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Railway files (optional - can commit if desired)
+# railway.toml
+
+# Supabase files (optional - for reference)
+# supabase/
