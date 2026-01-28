@@ -1,46 +1,24 @@
-# ============================================================================
 # X Community Bot - Dockerfile for Railway
-# ============================================================================
-
-# Build stage
-FROM rust:1.82-slim as builder
+FROM rust:1.75-slim
 
 # Install build dependencies
 RUN apt-get update && \
-    apt-get install -y pkg-config libssl-dev && \
+    apt-get install -y pkg-config libssl-dev ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Copy manifests
+# Copy manifests first for better caching
 COPY Cargo.toml Cargo.lock ./
-
-# Create dummy main.rs and lib.rs to build dependencies
-RUN mkdir src && \
-    echo "fn main() {}" > src/main.rs && \
-    echo "" > src/lib.rs && \
-    cargo build --release --no-default-features --features postgres --bin postgres && \
-    rm -rf src
 
 # Copy source code
 COPY src ./src
-# COPY config.toml ./  # Removed as it's missing; using env vars instead
 
-# Build the actual postgres binary
-RUN cargo build --release --no-default-features --features postgres --bin postgres
+# Build the postgres binary
+RUN cargo build --release --bin postgres
 
-# Runtime stage
-FROM debian:bookworm-slim
-
-# Install runtime dependencies
-RUN apt-get update && \
-    apt-get install -y ca-certificates && \
-    rm -rf /var/lib/apt/lists/*
-
-WORKDIR /app
-
-# Copy the postgres binary from builder
-COPY --from=builder /app/target/release/postgres /app/xcommunity-bot
+# Copy the binary to a simpler location
+RUN cp target/release/postgres /app/xcommunity-bot
 
 # Set environment variables
 ENV RUST_LOG=info
