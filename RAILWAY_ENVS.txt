@@ -1,0 +1,53 @@
+# ============================================================================
+# RAILWAY ENVIRONMENT VARIABLES
+# ============================================================================
+# Copy these values into Railway > Variables > Reference
+# Or add them when deploying your service
+# ============================================================================
+
+# ============================================================================
+# DATABASE (Required)
+# ============================================================================
+# Get this from Supabase:
+# 1. Go to supabase.com > Your Project > Settings > Database
+# 2. Copy "Connection string" (URI format)
+# 3. Replace [YOUR-PASSWORD] with your database password
+DATABASE_URL=postgres://postgres:[YOUR-PASSWORD]@db.[PROJECT-REF].supabase.co:5432/postgres
+
+# ============================================================================
+# X API (Required)
+# ============================================================================
+# Get these from browser DevTools when logged into X.com:
+# 1. Open X.com
+# 2. Press F12 (DevTools) > Network tab
+# 3. Find any request to "x.com/i/api/graphql"
+# 4. Copy these values from Request Headers:
+
+X_API_BEARER_TOKEN=AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs=1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA
+X_API_CSRF_TOKEN=cabcf23c3fe8021948e04cbaefb70ff7b0f8981350f2835ee518570ee3c40c7005a594d5615120f1727fcf6f0894662f8559c8141a6e41110647f5361879ef30cc1cb597350bc326dcd6499c05a02618
+X_API_COOKIE=__cuid=3e7e8cd06b4a463ebbc4f24f61cdb3ed; lang=en; kdt=lp7zRM6v5EsLv4KhRgiWfQyJzIal0Cehsz6SNbFV; dnt=1; d_prefs=MToxLGNvbnNlbnRfdmVyc2lvbjoyLHRleHRfdmVyc2lvbjoxMDAw; guest_id_ads=v1%3A176187697007227146; guest_id_marketing=v1%3A176187697007227146; personalization_id="v1_1sMGc6gzlkqb0p+SJetcaA=="; auth_token=YOUR_AUTH_TOKEN; ct0=YOUR_CT0_TOKEN
+
+# X API URLs (optional - defaults to these values)
+X_API_BASE_URL=https://x.com/i/api/graphql
+X_API_ENDPOINT=uBpODvS60xZ1q2L88d-W2A/CommunityQuery
+
+# ============================================================================
+# LOGGING (Optional)
+# ============================================================================
+# Log level: trace, debug, info, warn, error
+RUST_LOG=info
+
+# ============================================================================
+# HOW TO ADD TO RAILWAY:
+# ============================================================================
+# Method 1 - Railway Dashboard (Recommended):
+#   1. Go to your Railway project
+#   2. Click on your service > Settings > Variables
+#   3. Click "New Variable"
+#   4. Add each variable from above (one by one)
+#   5. Set the value (paste from above)
+#   6. Click "Add Variable"
+#
+# Method 2 - railway.toml (Not recommended for secrets):
+#   ⚠️ DON'T put secrets in railway.toml - use dashboard instead!
+#   railway.toml is committed to git, so secrets would be exposed

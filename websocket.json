@@ -1,0 +1,51 @@
+"Request URL
+wss://ws.mevx.io/api/v1/ws
+Request Method
+GET
+Status Code
+101 Switching Protocols
+cf-cache-status
+DYNAMIC
+cf-ray
+9c4e718d7d618a18-ARN
+connection
+upgrade
+date
+Wed, 28 Jan 2026 06:30:51 GMT
+sec-websocket-accept
+AHtby3hg9JBg3NQV+QrCWqsMvAU=
+server
+cloudflare
+upgrade
+websocket
+accept-encoding
+gzip, deflate, br, zstd
+accept-language
+en-US,en;q=0.9
+cache-control
+no-cache
+connection
+Upgrade
+host
+ws.mevx.io
+origin
+https://mevx.io
+pragma
+no-cache
+sec-websocket-extensions
+permessage-deflate; client_max_window_bits
+sec-websocket-key
+tQ33EXNrSeHgqrS3VOa4kQ==
+sec-websocket-version
+13
+upgrade
+websocket
+user-agent
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+
+send this message to the websocket to recieve messages
+"{"jsonrpc":"2.0","id":"033cda96-2cd8-48df-9903-8bf7f6753d52","method":"subscribeFlashPool","params":{"chain":"sol"}}"
+
+example message "{"jsonrpc":"2.0","method":"subscribeFlashPool","params":{"poolAddress":"2K3h47tsmGU4riWHB7DYNRc3bvAutfjK14nptCrQDCGE","chain":"sol","preFactory":"","factory":"pump","router":"","baseToken":"2QecPdfAAcwXPYGgZo3xUQqd4i6mjLpng3KXiDRKpump","quoteToken":"So11111111111111111111111111111111111111112","curvePercent":"2.19","marketCap":"3607.25207948931744258","priceUsd":"0.00000360725207948931744258","liquidUsd":"7678.4814812920376159520726892189722","report":{"priceChangePercent":"0","totalVolume":"62.68148129187001","buyVolume":"62.68148129187001","sellVolume":"0","tradeCount":1,"buyCount":1,"sellCount":0,"totalFee":"0.000194842","totalTip":"0"},"quoteTokenInfo":{"chain":"sol","address":"So11111111111111111111111111111111111111112","symbol":"SOL","name":"Wrapped Sol","logoUri":"https://cdn.mevx.io/assets/icon/sol.svg","totalSupply":"0","createdAt":"0001-01-01T00:00:00Z","updatedAt":"0001-01-01T00:00:00Z","audit":{},"metadata":{}},"baseTokenInfo":{"symbol":"PoopingDog","name":"AR Pooping Dog","logoUri":"https://ipfs.io/ipfs/bafkreidorjwolwfluuteywpezuqlipfqssdbxuagd7mcbtv5jrod44gdia","totalSupply":"1000000000","social":{"twitter":"https://x.com/i/communities/2016360408018460972","website":"https://www.tiktok.com/@borz_tugarin074/video/7595682676313476374"},"owner":"GYsZExjyV4MUzvVrr1221RZ8VW5sa9mTkfNRXkTLHrU5","top10HoldersPercent":"0","holderCount":0,"migratedByDevCount":0,"devHoldPercent":"0","sniperHoldPercent":"0","sniperWalletCount":0,"sniperWalletHoldCount":0,"insiderHoldPercent":"0","insiderWalletCount":0,"insiderWalletHoldCount":0,"devBundleHoldPercent":"0","devBundleWalletCount":0,"devBundleWalletHoldCount":0,"botWalletCount":0,"phishingHoldPercent":"0","phishingWalletCount":0,"phishingWalletHoldCount":0,"bundleHoldPercent":"0","bundleWalletCount":0,"bundleWalletHoldCount":0,"dexPaid":null,"dexBoost":{"score":0,"expireAt":0},"dexAd":{"package":0,"createdAt":0},"cto":null,"devWashTrading":false,"metadata":{}},"createdAt":1769581884,"metadata":{"curvePercent":"2.19"},"candlesticks":[{"timestamp":1769581800,"open":"0.000003607252079489318","high":"0.000003607252079489318","low":"0.000003607252079489318","close":"0.000003607252079489318","volume":"62.68148129187001"}]}}"
+
+i only want to recieve messages from pump. so from factory: pump, or prefactory pump with factory pumpamm
