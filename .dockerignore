@@ -2,7 +2,7 @@
 # Rust build artifacts
 target
 **\**\*.rs.bk
-**\Cargo.lock
+# Cargo.lock - needed for deployment
 
 # Environment variables (contains secrets)
 **\.env
