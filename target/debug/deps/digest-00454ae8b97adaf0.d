@@ -1,0 +1,11 @@
+C:\Users\maxsj\Desktop\CODE-10\xcommunity\target\debug\deps\digest-00454ae8b97adaf0.d: C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\lib.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api\ct_variable.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api\rt_variable.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api\wrapper.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api\xof_reader.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\digest.rs
+
+C:\Users\maxsj\Desktop\CODE-10\xcommunity\target\debug\deps\libdigest-00454ae8b97adaf0.rmeta: C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\lib.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api\ct_variable.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api\rt_variable.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api\wrapper.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api\xof_reader.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\digest.rs
+
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\lib.rs:
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api.rs:
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api\ct_variable.rs:
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api\rt_variable.rs:
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api\wrapper.rs:
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\core_api\xof_reader.rs:
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\digest-0.10.7\src\digest.rs:

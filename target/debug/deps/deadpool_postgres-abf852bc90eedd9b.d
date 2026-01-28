@@ -1,0 +1,10 @@
+C:\Users\maxsj\Desktop\CODE-10\xcommunity\target\debug\deps\deadpool_postgres-abf852bc90eedd9b.d: C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\lib.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\config.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\generic_client.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\../README.md
+
+C:\Users\maxsj\Desktop\CODE-10\xcommunity\target\debug\deps\libdeadpool_postgres-abf852bc90eedd9b.rlib: C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\lib.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\config.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\generic_client.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\../README.md
+
+C:\Users\maxsj\Desktop\CODE-10\xcommunity\target\debug\deps\libdeadpool_postgres-abf852bc90eedd9b.rmeta: C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\lib.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\config.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\generic_client.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\../README.md
+
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\lib.rs:
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\config.rs:
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\generic_client.rs:
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\deadpool-postgres-0.14.1\src\../README.md:

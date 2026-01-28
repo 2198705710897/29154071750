@@ -1,0 +1,9 @@
+C:\Users\maxsj\Desktop\CODE-10\xcommunity\target\debug\deps\postgres_types-cb6ce9fe4557eea7.d: C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\lib.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\pg_lsn.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\private.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\special.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\type_gen.rs
+
+C:\Users\maxsj\Desktop\CODE-10\xcommunity\target\debug\deps\libpostgres_types-cb6ce9fe4557eea7.rmeta: C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\lib.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\pg_lsn.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\private.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\special.rs C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\type_gen.rs
+
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\lib.rs:
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\pg_lsn.rs:
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\private.rs:
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\special.rs:
+C:\Users\maxsj\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\postgres-types-0.2.12\src\type_gen.rs:
