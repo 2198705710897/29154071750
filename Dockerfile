@@ -23,7 +23,7 @@ RUN mkdir src && \
 
 # Copy source code
 COPY src ./src
-COPY config.toml ./
+# COPY config.toml ./  # Removed as it's missing; using env vars instead
 
 # Build the actual application
 RUN touch src/main.rs && \
