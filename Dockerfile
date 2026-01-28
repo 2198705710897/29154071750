@@ -15,19 +15,19 @@ WORKDIR /app
 # Copy manifests
 COPY Cargo.toml Cargo.lock ./
 
-# Create dummy main.rs to build dependencies
+# Create dummy main.rs and lib.rs to build dependencies
 RUN mkdir src && \
     echo "fn main() {}" > src/main.rs && \
-    cargo build --release --features postgres && \
+    echo "" > src/lib.rs && \
+    cargo build --release --no-default-features --features postgres --bin postgres && \
     rm -rf src
 
 # Copy source code
 COPY src ./src
 # COPY config.toml ./  # Removed as it's missing; using env vars instead
 
-# Build the actual application
-RUN touch src/main.rs && \
-    cargo build --release --features postgres
+# Build the actual postgres binary
+RUN cargo build --release --no-default-features --features postgres --bin postgres
 
 # Runtime stage
 FROM debian:bookworm-slim
@@ -39,8 +39,8 @@ RUN apt-get update && \
 
 WORKDIR /app
 
-# Copy the binary from builder
-COPY --from=builder /app/target/release/xcommunity-bot /app/xcommunity-bot
+# Copy the postgres binary from builder
+COPY --from=builder /app/target/release/postgres /app/xcommunity-bot
 
 # Set environment variables
 ENV RUST_LOG=info

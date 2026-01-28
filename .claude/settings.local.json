@@ -9,7 +9,11 @@
       "Bash(cargo generate-lockfile:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(cargo update:*)",
+      "Bash(cargo check:*)",
+      "Bash(cargo doc:*)",
+      "Bash(docker build:*)"
     ]
   }
 }

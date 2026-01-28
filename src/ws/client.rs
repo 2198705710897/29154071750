@@ -5,7 +5,7 @@ use anyhow::Result;
 use chrono::Utc;
 
 use crate::ws::{message::{SubscribeMessage, SubscribeParams, WsMessage}, filter::should_accept_message};
-use crate::database::TokenRepository;
+use crate::database::TokenRepositoryTrait;
 use crate::x_api::XApiClient;
 use crate::scoring::TokenScorer;
 use crate::error::AppError;
@@ -28,13 +28,13 @@ fn format_mc(mc_str: &str) -> String {
 }
 
 pub struct WebSocketClient<'a> {
-    repo: &'a TokenRepository,
+    repo: &'a dyn TokenRepositoryTrait,
     x_api: &'a XApiClient,
     bot_start_time: i64,
 }
 
 impl<'a> WebSocketClient<'a> {
-    pub fn new(repo: &'a TokenRepository, x_api: &'a XApiClient) -> Self {
+    pub fn new(repo: &'a dyn TokenRepositoryTrait, x_api: &'a XApiClient) -> Self {
         let bot_start_time = Utc::now().timestamp();
         tracing::info!("🕐 Bot started at: {}", bot_start_time);
         Self { repo, x_api, bot_start_time }
@@ -104,7 +104,7 @@ impl<'a> WebSocketClient<'a> {
 
     async fn handle_message(
         text: &str,
-        repo: &TokenRepository,
+        repo: &dyn TokenRepositoryTrait,
         x_api: &XApiClient,
         bot_start_time: i64,
     ) -> Result<()> {
@@ -122,8 +122,8 @@ impl<'a> WebSocketClient<'a> {
             let pool_address = &msg.params.pool_address;
 
             // Check if token is already in our database AND has an admin
-            let is_tracked = repo.token_exists(pool_address)?;
-            let has_admin = repo.token_has_admin(pool_address)?;
+            let is_tracked = repo.token_exists(pool_address).await?;
+            let has_admin = repo.token_has_admin(pool_address).await?;
             let should_track = is_tracked && has_admin;
 
             // Apply filters: accept if (already tracked WITH admin) OR (is pump.fun + has community + created after bot start)
@@ -132,20 +132,20 @@ impl<'a> WebSocketClient<'a> {
                 let is_new = !is_tracked;
 
                 // Insert/update token in database
-                repo.upsert_token(&msg.params, detected_at)?;
+                repo.upsert_token(&msg.params, detected_at).await?;
 
                 // Check for migration (factory changed to pumpamm)
-                let just_migrated = repo.detect_and_update_migration(pool_address, &msg.params)?;
+                let just_migrated = repo.detect_and_update_migration(pool_address, &msg.params).await?;
 
                 // Extract community_id from twitter URL
                 if let Some(community_id) = extract_community_id(&msg.params) {
                     // Check if we already have an admin for this community (from any previous token)
-                    let cached_admin = repo.get_admin_for_community(&community_id).ok().flatten();
+                    let cached_admin = repo.get_admin_for_community(&community_id).await.ok().flatten();
 
                     if let Some(admin_username) = cached_admin {
                         // We already know this admin - just update the token
                         if !has_admin {
-                            repo.update_admin_username(pool_address, &admin_username)?;
+                            repo.update_admin_username(pool_address, &admin_username).await?;
                         }
                         if is_new {
                             tracing::info!(
@@ -158,7 +158,7 @@ impl<'a> WebSocketClient<'a> {
                     } else if is_new || !has_admin {
                         // New token OR existing token without admin AND no cached admin - fetch from API
                         if let Ok(Some(admin_username)) = x_api.fetch_community_admin(&community_id).await {
-                            repo.update_admin_username(pool_address, &admin_username)?;
+                            repo.update_admin_username(pool_address, &admin_username).await?;
                             tracing::info!(
                                 "{} {} by @{} | MC: ${}",
                                 if is_new { "🆕 NEW TOKEN" } else { "✅ ADMIN FETCHED" },
@@ -180,7 +180,7 @@ impl<'a> WebSocketClient<'a> {
 
                 // Get token data for scoring
                 if let Ok(Some((ath, is_migrated, migrated_at, created_at))) =
-                    repo.get_token_for_scoring(pool_address) {
+                    repo.get_token_for_scoring(pool_address).await {
                     // Calculate score
                     let score = TokenScorer::calculate_score(
                         ath.as_deref(),
@@ -190,7 +190,7 @@ impl<'a> WebSocketClient<'a> {
                     );
 
                     // Update ATH and score in database
-                    if repo.update_ath_and_score(pool_address, &msg.params, score)? {
+                    if repo.update_ath_and_score(pool_address, &msg.params, score).await? {
                         // Log only when new ATH is detected
                         tracing::info!(
                             "📈 NEW ATH: {} | {} | MC: ${}",

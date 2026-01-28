@@ -1,3 +1,4 @@
+#[cfg(feature = "sqlite")]
 mod ws;
 mod error;
 mod config;
@@ -5,12 +6,17 @@ mod database;
 mod scoring;
 mod x_api;
 
+#[cfg(feature = "sqlite")]
 use ws::client::WebSocketClient;
+#[cfg(feature = "sqlite")]
 use config::Config;
+#[cfg(feature = "sqlite")]
 use database::{connection::establish_connection, TokenRepository};
 use x_api::XApiClient;
+#[cfg(feature = "sqlite")]
 use tracing::info;
 
+#[cfg(feature = "sqlite")]
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Initialize logging
@@ -44,4 +50,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     ws_client.run().await?;
 
     Ok(())
+}
+
+#[cfg(feature = "postgres")]
+fn main() {
+    // PostgreSQL version - to be implemented
+    eprintln!("PostgreSQL support: Use the postgres binary instead");
 }
