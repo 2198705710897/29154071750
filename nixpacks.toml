@@ -1,0 +1,13 @@
+[phases.build]
+cmds = ["cargo build --release --bin postgres"]
+
+[start]
+cmd = "./target/release/postgres"
+
+[phases.setup]
+nixPkgs = ["openssl-dev", "pkg-config"]
+
+[variables]
+RUST_LOG = "info"
+RUST_BACKTRACE = "1"
+DATABASE_URL = "${{Postgres.DATABASE_URL}}"
